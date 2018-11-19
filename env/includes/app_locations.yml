@@ -51,9 +51,8 @@ apps.tk-multi-loader2.location:
 
 # publish2
 apps.tk-multi-publish2.location:
-  type: app_store
-  name: tk-multi-publish2
-  version: v2.2.2
+  type: dev
+  path: ~/gitlocal/tk-multi-publish2
 
 # pythonconsole
 apps.tk-multi-pythonconsole.location:

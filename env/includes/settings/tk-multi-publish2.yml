@@ -177,10 +177,11 @@ settings.tk-multi-publish2.maya.asset_step:
     hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session.py"
     settings:
         Publish Template: maya_asset_publish
-  - name: Publish to Shotgun
-    hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session_geometry.py"
+  - name: Publish Alembic
+    hook: "{self}/publish_file.py:{engine}/tk-multi-publish2/basic/publish_session_geometry.py:{config}/tk-multi-publish2/farm_wrapper.py"
     settings:
         Publish Template: asset_alembic_cache
+  post_phase: "{self}/post_phase.py:{config}/tk-multi-publish2/farm_submission.py"
   help_url: *help_url
   location: "@apps.tk-multi-publish2.location"
 
