@@ -51,10 +51,9 @@ apps.tk-multi-loader2.location:
 
 # publish2
 apps.tk-multi-publish2.location:
-  type: git_branch
-  branch: SG-9452_publish_api_webinar
-  version: 603671decfed6fb9964c0ca0a8f0e8cf836bf55e
-  path: https://github.com/shotgunsoftware/tk-multi-publish2.git
+  type: app_store
+  name: tk-multi-publish2
+  version: v2.3.0
 
 # pythonconsole
 apps.tk-multi-pythonconsole.location:

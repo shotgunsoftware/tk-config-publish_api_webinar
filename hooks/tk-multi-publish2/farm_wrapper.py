@@ -153,7 +153,9 @@ class FarmWrapper(sgtk.get_hook_baseclass()):
         :type item: :class:`PublishItem` to publish.
         """
         if self._is_submitting_to_farm(settings):
-            item.local_properties[self._JOB_SUBMITTER] = sgtk.util.get_current_user(
+            # The publish_user will be picked up by the publish method at publishing time
+            # on the render farm.
+            item.local_properties.publish_user = sgtk.util.get_current_user(
                 self.parent.sgtk
             )
             # We're inside the DCC and we're currently publishing a task
@@ -161,22 +163,6 @@ class FarmWrapper(sgtk.get_hook_baseclass()):
             self.logger.info("This publish will be submitted to the farm.")
         else:
             super(FarmWrapper, self).publish(settings, item)
-
-    def get_publish_user(self, settings, item):
-        """
-        Retrieves the user that should be associated with the render
-        on the farm.
-
-        :param dict settings: Dictionary of :class:`PluginSetting` object for this task.
-        :param item: The item currently being published.
-        :type item: :class:`PublishItem` to publish.
-        """
-        # If this method gets invoked while we're on the local computer, it means
-        # we're not publishing on the farm so we can call the default implementation.
-        if _is_on_local_computer():
-            return super(FarmWrapper, self).get_publish_user(settings, item)
-        else:
-            return item.local_properties[self._JOB_SUBMITTER]
 
     def finalize(self, settings, item):
         """
