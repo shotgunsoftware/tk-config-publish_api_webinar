@@ -8,6 +8,11 @@
 # agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
 # not expressly granted therein are reserved by Shotgun Software Inc.
 
+############################################################################
+# Warning!
+# Please note that this code is provided as is. It is meant only as a proof
+# of concept and does not aim to handle all the issues that might crop up
+# during farm submission.
 
 import sgtk
 
