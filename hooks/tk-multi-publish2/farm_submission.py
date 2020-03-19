@@ -12,6 +12,12 @@
 This hook will submit the publish tree to the "farm".
 """
 
+############################################################################
+# Warning!
+# Please note that this code is provided as is. It is meant only as a proof
+# of concept and does not aim to handle all the issues that might crop up
+# during farm submission.
+
 import os
 
 import sgtk
